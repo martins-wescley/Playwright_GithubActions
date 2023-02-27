@@ -9,7 +9,7 @@ on:
 
 jobs:
   run_api:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./apps/api
