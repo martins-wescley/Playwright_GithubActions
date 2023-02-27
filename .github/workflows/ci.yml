@@ -35,4 +35,5 @@ jobs:
           cd ..
           cd ..
           yarn install
+          npx playwright install
           yarn playwright test tasks
