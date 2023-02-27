@@ -26,7 +26,7 @@ Navigate to web folder and install the dev dependencies, run `yarn install`
 1. In the root directory install the dev dependencies, run `yarn install`
 2. In the same directory install the test browser, `yarn playwright install chromium` 
 
-## Start the test environment
+## Starting the test environment
 1. In a terminal, navigate to api folder and execute the command `yarn dev`
 2. In another terminal, navigate to web folder and execute the command `yarn dev`
 

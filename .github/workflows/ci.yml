@@ -14,7 +14,7 @@ jobs:
       - name: Install Yarn
         run: npm install --global yarn
         
-  api:
+  test_environment:
     needs: yarn
     runs-on: ubuntu-latest
     defaults:
@@ -22,7 +22,7 @@ jobs:
         working-directory: apps/
     steps:
       - uses: actions/checkout@v3
-      - name: Install API modules
+      - name: Install modules, start API and Web services and run all tests
         run: |
           pwd
           cd api
@@ -32,14 +32,21 @@ jobs:
           cd web
           yarn install
           yarn dev &
-          cd ..
-          cd ..
-          yarn install
-          npx playwright install chromium
-          yarn playwright test tasks
-      - uses: actions/upload-artifact@v3.1.2
-        if: always()
-        with:
-         name: playwright-report
-         path: playwright-report/
-         retention-days: 30
+
+  test:
+    needs: test_environment
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install modules
+      run: yarn install
+    - name: Install Playwright Chromium
+      run: yarn add playwright-chromium
+    - name: Run Playwright test
+      run: yarn playwright test          
+    - uses: actions/upload-artifact@v3.1.2
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
