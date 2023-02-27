@@ -33,5 +33,31 @@ jobs:
           pwd
           cd web
           yarn install
-        
+  run_apps:
+    needs: modules
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/
+    steps:
+      - uses: actions/checkout@v3
+      - name: Start API
+        run: |
+          pwd
+          cd api
+          yarn dev
+      - uses: actions/checkout@v3
+      - name: Start WEB
+        run: |
+          pwd
+          cd web
+          yarn dev
+
+  playwright_test: 
+    needs: run_apps
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run test
+        run:  yarn playwright test tasks
   
