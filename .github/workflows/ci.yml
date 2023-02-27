@@ -34,4 +34,5 @@ jobs:
           yarn dev &
           cd ..
           cd ..
+          yarn install
           yarn playwright test tasks
