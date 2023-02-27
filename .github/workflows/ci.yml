@@ -35,7 +35,7 @@ jobs:
           cd ..
           cd ..
           yarn install
-          npx playwright install
+          npx playwright install chromium
           yarn playwright test tasks
       - uses: actions/upload-artifact@v3.1.2
         if: always()
