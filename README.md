@@ -16,13 +16,13 @@ To run this project, you will need:
 
 ## Installation 
 
-# API
+### API
 Navigate to api folder and install the dev dependencies, run `yarn install`
 
-# WEB
+### WEB
 Navigate to web folder and install the dev dependencies, run `yarn install`
 
-# Playwright
+### Playwright
 1. In the root directory install the dev dependencies, run `yarn install`
 2. In the same directory install the test browser, `yarn playwright install chromium` 
 
