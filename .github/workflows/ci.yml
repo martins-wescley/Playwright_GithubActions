@@ -19,9 +19,19 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: apps/api
+        working-directory: apps/
     steps:
       - uses: actions/checkout@v3
-      - name: Install modules
-        run: yarn install
+      - name: Install API modules
+        run: |
+          pwd
+          cd api
+          yarn install
+      - uses: actions/checkout@v3
+      - name: Install WEB modules
+        run: |
+          pwd
+          cd web
+          yarn install
+        
   
