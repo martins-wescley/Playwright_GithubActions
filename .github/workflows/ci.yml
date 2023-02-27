@@ -27,13 +27,11 @@ jobs:
           pwd
           cd api
           yarn install
-          yarn dev
-          sleep 5
+          yarn dev &
           cd ..
           cd web
           yarn install
-          yarn dev
-          sleep 5
+          yarn dev &
           cd ..
           cd ..
           yarn playwright test tasks
