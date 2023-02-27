@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Api do gerenciador de tarefas",
   "main": "server.js",
-  "author": "Fernando Papito",
   "license": "MIT",
   "scripts": {
     "dev": "node src/server.js",
