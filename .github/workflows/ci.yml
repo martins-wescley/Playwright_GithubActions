@@ -28,26 +28,12 @@ jobs:
           cd api
           yarn install
           yarn dev
-  web:
-    needs: yarn
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install WEB modules
-        run: |
-          pwd
+          sleep 5
+          cd ..
           cd web
           yarn install
           yarn dev
-
-  playwright_test: 
-    needs: web
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run test
-        run:  yarn playwright test tasks
-  
+          sleep 5
+          cd ..
+          cd ..
+          yarn playwright test tasks
