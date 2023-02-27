@@ -16,10 +16,10 @@ To run this project, you will need:
 
 ## Installation 
 
-### API
+### Api
 Navigate to api folder and install the dev dependencies, run `yarn install`
 
-### WEB
+### Web
 Navigate to web folder and install the dev dependencies, run `yarn install`
 
 ### Playwright
